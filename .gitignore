@@ -1,0 +1,26 @@
+# 依存関係
+/node_modules
+
+# ビルド出力
+/.next
+/out
+/dist
+
+# 環境変数
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# デバッグログ
+*.log
+
+# エディタの設定
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db

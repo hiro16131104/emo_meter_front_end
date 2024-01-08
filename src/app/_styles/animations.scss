@@ -1,0 +1,22 @@
+// 共通して使用するアニメーションを定義する
+@mixin fade-in($duration) {
+    animation-name: fade-in-anime;
+    animation-duration: $duration;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fade-in-anime {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.fade-in-base {
+    @include fade-in(2s);
+}
+.fade-in-fast {
+    @include fade-in(1s);
+}

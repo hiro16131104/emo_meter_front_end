@@ -1,0 +1,10 @@
+// 変数を定義
+$size: 1.6rem;
+
+.marker {
+    width: $size;
+    height: $size;
+    background: var(--theme-color);
+    border: 0.5px solid var(--theme-color-dark);
+    border-radius: 50%;
+}

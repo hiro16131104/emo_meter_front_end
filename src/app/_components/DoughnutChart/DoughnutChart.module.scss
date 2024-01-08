@@ -1,0 +1,24 @@
+// 変数を定義
+$size: 80dvw;
+$max-size: 300px;
+
+.container {
+    width: $size;
+    height: $size;
+    max-width: $max-size;
+    max-height: $max-size;
+}
+.msg {
+    // 変数を定義
+    $msg-size: calc($size * 0.4);
+    $msg-max-size: calc($max-size * 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    width: $msg-size;
+    height: $msg-size;
+    max-width: $msg-max-size;
+    max-height: $msg-max-size;
+}

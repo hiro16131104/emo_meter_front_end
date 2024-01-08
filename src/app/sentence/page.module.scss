@@ -1,0 +1,117 @@
+// 変数を定義
+$container-padding: 20px;
+$explanation-padding: calc($container-padding + 5px) calc($container-padding + 10px);
+$button-height: 45px;
+$button1-margin-top: 20px;
+$button2-margin-top: 10px;
+$text-box-height: calc(
+    var(--height-main) - (2 * $container-padding) - (2 * $button-height) - $button1-margin-top - $button2-margin-top
+);
+$delete-top: calc($container-padding + 5px);
+$delete-right: calc($container-padding + 5px);
+$word-count-height: 24px;
+$word-count-top: calc($container-padding + $text-box-height - $word-count-height - 5px);
+$word-count-right: calc($container-padding + 10px);
+$example-height: 24px;
+$example-top: calc($container-padding + $text-box-height - $example-height - 5px);
+$example-left: calc($container-padding + 10px);
+
+.container {
+    justify-content: flex-start;
+    width: 100%;
+    height: fit-content;
+    max-width: var(--max-width-contents);
+    min-height: var(--height-main);
+    padding: $container-padding;
+}
+.text-box {
+    width: 100%;
+    height: $text-box-height;
+}
+.explanation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: $explanation-padding;
+    width: 100%;
+    height: fit-content;
+    align-items: flex-start !important;
+    opacity: 0.8;
+    h2 {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    pre {
+        font-family: inherit;
+        white-space: pre-wrap;
+        margin-top: 10px;
+    }
+}
+.delete {
+    position: absolute;
+    top: $delete-top;
+    right: $delete-right;
+    .delete-button {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        font-size: 1.8rem;
+        background: #eee;
+        padding-bottom: 3px;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+}
+.example {
+    position: absolute;
+    top: $example-top;
+    left: $example-left;
+    border: 1px solid var(--theme-color);
+    border-radius: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--theme-color-light);
+    }
+    .example-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4rem;
+        color: var(--theme-color);
+    }
+}
+.word-count {
+    position: absolute;
+    top: $word-count-top;
+    right: $word-count-right;
+    width: fit-content;
+    height: $word-count-height;
+    padding: 3px 6px;
+    font-size: 1.4rem;
+    background-color: #fff;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+.button-container {
+    justify-content: flex-start;
+    width: 100%;
+    height: fit-content;
+    .file-upload-button {
+        margin-top: $button1-margin-top;
+        width: 100%;
+        height: $button-height;
+    }
+    .execute-button {
+        margin-top: $button2-margin-top;
+        width: 100%;
+        height: $button-height;
+    }
+    .link {
+        display: none;
+    }
+}
+.error-msg {
+    color: var(--font-color-error);
+}

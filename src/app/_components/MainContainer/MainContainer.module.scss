@@ -1,0 +1,11 @@
+$width: 100%;
+
+.main {
+    width: $width;
+}
+.container {
+    justify-content: flex-start;
+    width: $width;
+    height: fit-content;
+    min-height: var(--height-main);
+}

@@ -1,0 +1,15 @@
+.fluid {
+    opacity: 0.9;
+    width: 100%;
+    filter: blur(0px);
+    transform: rotate(0deg);
+    path {
+        fill: url(#gradient);
+    }
+}
+.start-color {
+    stop-color: #56ccf2;
+}
+.end-color {
+    stop-color: #2f80ed;
+}

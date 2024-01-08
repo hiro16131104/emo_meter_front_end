@@ -1,0 +1,17 @@
+.outer-container {
+    justify-content: flex-start;
+    width: 100dvw;
+    height: fit-content;
+}
+.main-title {
+    a {
+        text-decoration: none;
+        color: #555;
+    }
+    span {
+        font-size: 1.3rem;
+    }
+}
+.copyright {
+    font-size: 1.2rem;
+}

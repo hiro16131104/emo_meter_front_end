@@ -1,0 +1,40 @@
+.container {
+    width: 100%;
+    height: var(--height-main);
+}
+.fluid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--height-main);
+}
+.intro {
+    color: #fff;
+    cursor: pointer;
+    h2 {
+        font-size: 2.6rem;
+        font-weight: 400;
+    }
+    p {
+        font-size: 1.8rem;
+        margin-top: 5px;
+    }
+}
+.link {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f4c4f3;
+    transform: skew(-10deg);
+    margin-top: 15px;
+    animation: blink-anime 1.5s ease-in-out infinite alternate;
+}
+@keyframes blink-anime {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

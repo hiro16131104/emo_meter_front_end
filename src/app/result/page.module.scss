@@ -1,0 +1,112 @@
+// 変数を定義
+$container-padding: 20px;
+$chart-container-max-width: 400px;
+$line-height: calc(1.6rem * 1.5);
+
+.container {
+    justify-content: flex-start !important;
+    width: 100%;
+    height: fit-content;
+    max-width: var(--max-width-contents);
+    min-height: var(--height-main);
+    padding: $container-padding;
+}
+.title-container {
+    // 変数を定義
+    $title-container-center-width: 40%;
+    flex-direction: row !important;
+    width: 100%;
+    height: fit-content;
+    h2 {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    .title-container-left {
+        width: calc((100% - $title-container-center-width) / 2);
+    }
+    .title-container-center {
+        width: $title-container-center-width;
+    }
+    .title-container-right {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: calc((100% - $title-container-center-width) / 2);
+    }
+}
+.contents-container {
+    width: 100%;
+    .chart-container {
+        width: 100%;
+        max-width: $chart-container-max-width;
+        padding-top: $container-padding;
+        .table-container {
+            padding-top: $container-padding;
+            .marker {
+                margin-top: 3px;
+            }
+        }
+    }
+    .result-msg-container {
+        width: 100%;
+        padding-top: $container-padding;
+        .result-msg {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-size: 2rem;
+        }
+    }
+    .sentences-container {
+        width: 100%;
+        padding-top: $container-padding;
+        align-items: flex-start !important;
+        .sentences {
+            width: 100%;
+            padding: 5px;
+            .percent {
+                white-space: nowrap;
+                font-size: 1.2rem;
+                line-height: $line-height;
+                vertical-align: top !important;
+                border-right: 0.5px solid var(--theme-color);
+            }
+            .sentence {
+                padding-left: 10px !important;
+                span {
+                    border-radius: 0 30px 0 7px;
+                    font-size: 1.4rem;
+                    line-height: $line-height;
+                }
+            }
+        }
+    }
+}
+.button-container {
+    justify-content: flex-start;
+    width: 100%;
+    height: fit-content;
+    padding-top: $container-padding;
+    .redirect-button {
+        width: 100%;
+        height: 45px;
+    }
+}
+.headerless-table {
+    border-collapse: collapse;
+    width: fit-content;
+    max-width: 100%;
+    word-break: break-word;
+    td {
+        vertical-align: middle;
+        padding: 2px 4px;
+    }
+}
+.link {
+    display: none;
+}
+.margin-left-5 {
+    margin-left: 5px;
+}
+.text-align-right {
+    text-align: right;
+}

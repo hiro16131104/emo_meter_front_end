@@ -1,0 +1,31 @@
+$width: 100%;
+$start-position: var(--height-footer);
+
+.footer {
+    width: $width;
+}
+
+.container {
+    width: $width;
+    height: var(--height-footer);
+    background: #fff;
+    box-shadow: 0 0 10px #ccc;
+    border-top: 1px solid var(--theme-color);
+}
+.fade-up {
+    animation-name: fade-up-anime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fade-up-anime {
+    0% {
+        opacity: 0;
+        transform: translateY($start-position);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

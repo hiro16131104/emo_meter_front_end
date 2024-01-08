@@ -1,0 +1,21 @@
+.text-box {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--theme-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 3px 3px 10px #ccc;
+    &:disabled {
+        border-color: var(--theme-color);
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    &:focus {
+        outline: none;
+        border-color: var(--theme-color-dark);
+    }
+}

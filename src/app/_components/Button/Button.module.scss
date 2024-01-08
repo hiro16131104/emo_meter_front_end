@@ -1,0 +1,47 @@
+$transition: 1s;
+
+.button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    transition: $transition;
+    padding: 6px 12px;
+    box-shadow: 3px 3px 10px #ccc;
+    cursor: pointer;
+    &:hover {
+        transition: $transition;
+    }
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+.default {
+    color: #fff;
+    background: var(--theme-color);
+    border-color: var(--theme-color);
+    &:hover {
+        background: var(--theme-color-dark);
+        border-color: var(--theme-color-dark);
+    }
+    &:disabled {
+        background: var(--theme-color);
+        border-color: var(--theme-color);
+    }
+}
+.outlined {
+    color: var(--theme-color);
+    background: #fff;
+    border-color: var(--theme-color);
+    &:hover {
+        background: var(--theme-color-light);
+    }
+    &:disabled {
+        color: var(--theme-color);
+        background: #fff;
+        border-color: var(--theme-color);
+    }
+}

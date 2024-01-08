@@ -1,0 +1,29 @@
+$width: 100%;
+$start-position: calc(var(--height-header) * -1);
+
+.header{
+    width: $width;
+}
+.container {
+    width: $width;
+    height: var(--height-header);
+    background: #fff;
+    box-shadow: 0 0 10px #ccc;
+    border-bottom: 1px solid var(--theme-color);
+}
+.fade-down {
+    animation-name: fade-down-anime;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fade-down-anime {
+    0% {
+        opacity: 0;
+        transform: translateY($start-position);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

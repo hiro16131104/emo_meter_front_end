@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+// GoogleのNotosansJPフォントを読み込む
+@font-face {
+    font-family: "Noto Sans JP";
+    src: url("../_fonts/NotoSansJP-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+    // カスタムプロパティを定義
+    --height-header: 6rem;
+    --height-footer: 4.5rem;
+    --height-main: calc(100dvh - var(--height-header) - var(--height-footer));
+    --max-width-contents: 1200px;
+    --theme-color: #3ea8ff;
+    --theme-color-dark: #0f83fd;
+    --theme-color-light: #ecf5ff;
+    --bg-color-base: #f5f7f8;
+    --font-color-base: #555;
+    --font-color-error: #ff6868;
+}
+* {
+    margin: 0;
+    padding: 0;
+    // borderの太さも含めて親要素の中に収まるよう、サイズを調整する
+    box-sizing: border-box;
+    position: relative;
+}
+html {
+    // ルートのフォントサイズを設定（1rem = 10px）
+    font-size: 62.5%;
+}
+body {
+    font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial",
+        "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--font-color-base);
+    background: var(--bg-color-base);
+}
