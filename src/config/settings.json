@@ -2,7 +2,7 @@
     "comment": "Next.jsの設定ファイル",
     "environment": {
         "comment": "本番環境は'production'、開発環境は'development'",
-        "value": "development"
+        "value": "production"
     },
     "backend": {
         "comment": "バックエンドと接続するための設定",
