@@ -15,21 +15,25 @@ import styles from "./page.module.scss";
 // トップページを表示するコンポーネント
 export default function Home(): React.ReactElement {
   // fluid（svg）の横幅を取得するためのstate
-  const [fluidWidth, setFluidWidth] = React.useState<number>(0);
+  const [fluidLength, setFluidLength] = React.useState<number>(0);
   // fluid横幅に応じてintroのサイズを変更
   const introStyle: React.CSSProperties = {
-    width: `${fluidWidth * 0.7}px`,
-    height: `${fluidWidth * 0.7}px`,
+    width: `${fluidLength * 0.7}px`,
+    height: `${fluidLength * 0.7}px`,
   };
   // リンクを参照するためのref
   const linkRef = React.useRef<HTMLAnchorElement>(null);
   // fluidのサイズを更新する関数
   const updateFluidSize = (): void => {
+    // fluidのサイズを取得
     const fluidSize: { width: number; height: number } =
       Dom.getElementSize("#fluid");
+    // width,heightのうち小さい方を取得
+    const length: number =
+      fluidSize.width < fluidSize.height ? fluidSize.width : fluidSize.height;
 
     // stateを更新
-    setFluidWidth(fluidSize.width);
+    setFluidLength(length);
   };
   // introをクリックした時もリンクをクリックしたことにする関数
   const handleIntroClick = (event: React.MouseEvent<HTMLElement>): void => {

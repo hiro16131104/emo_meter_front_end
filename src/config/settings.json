@@ -8,7 +8,7 @@
         "comment": "バックエンドと接続するための設定",
         "url": {
             "comment": "バックエンドのURL",
-            "production": "https://emo-meter-back-end.hirohiro-web-app.net",
+            "production": "https://kjyvczkxiucwrrbvhiiiajqyre0tmosf.lambda-url.ap-northeast-1.on.aws",
             "development": "http://localhost:5050"
         }
     },
