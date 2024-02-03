@@ -14,7 +14,9 @@ import MainContainer from "./_components/MainContainer/MainContainer";
 import Loader from "./_components/Loader/Loader";
 import UserIdManager from "./_components/UserIdManager/UserIdManager";
 // オリジナルのクラスをインポート
-import { Config } from "../config/config";
+import { Config, KeywordsItem } from "../config/config";
+import { Browser } from "./_services/browser";
+import { BackEnd } from "./_services/backEnd";
 // cssをインポート
 import "./_styles/globals.scss";
 import "./_styles/animations.scss";
@@ -22,6 +24,8 @@ import styles from "./layout.module.scss";
 
 // 分割代入
 const { title, description } = Config.metadata;
+// 測定する際に使用するアイテム
+const keywords: KeywordsItem[] = Config.page.keywords;
 
 // ページのレイアウト
 export default function RootLayout({
@@ -29,6 +33,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }): React.ReactElement {
+  // API側のインスタンスにて学習済みモデルをキャッシュしておく
+  const loadLearnedModel = async () => {
+    const userId: string | null = Browser.getUserIdFromLocalStorage();
+    const backEnd = new BackEnd();
+
+    // 学習済みモデルを読み込む
+    backEnd.loadLearnedModel(
+      userId!,
+      // 各要素のkeywordプロパティの値を抽出し、配列を作成する
+      keywords.map((item) => item.keyword)
+    );
+  };
+
+  // ページが表示されたときに実行する関数
+  React.useEffect(() => {
+    loadLearnedModel();
+  }, []);
+
   return (
     <html lang="ja">
       <head>

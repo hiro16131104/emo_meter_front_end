@@ -157,6 +157,25 @@ export default function Result(): React.ReactElement {
       }
     });
 
+    // どの文からも感情が測定できなかった場合
+    if (!item.keyword) {
+      // トップページへ遷移する
+      displayAlertMsgBox(
+        [
+          "文章から感情が読み取れません。",
+          "違う文章で試してください。",
+          "トップページへ遷移します。",
+        ],
+        true,
+        msgBoxProps,
+        setMsgBoxProps,
+        () => {
+          link.click();
+        }
+      );
+      return;
+    }
+
     // 最も出現率の高いキーワードに対応するメッセージを抽出
     msgs = keywords.find((x) => {
       return x.keyword === item.keyword;

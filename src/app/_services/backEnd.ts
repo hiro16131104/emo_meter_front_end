@@ -1,3 +1,6 @@
+import axios, { AxiosResponse } from "axios";
+
+// オリジナルのクラスをインポート
 import { Config } from "../../config/config";
 import { WebApi } from "./webApi";
 
@@ -116,5 +119,26 @@ export class BackEnd {
     } catch (error) {
       throw error;
     }
+  }
+
+  // 学習済みモデルを読み込む（API側のインスタンスにてキャッシュしておく）
+  public async loadLearnedModel(
+    userId: string,
+    keywords: string[]
+  ): Promise<void> {
+    const PATH: string = "/api/calculate_similarity";
+    // JSON形式のデータを作成
+    const data = { user_id: userId, keywords: keywords, text: "ダミー文字列" };
+    const headers = this.webApi.HEADERS.JSON;
+
+    // 非同期で通信を行う（レスポンスされた内容は使用しない）
+    axios
+      .post(`${this.url}${PATH}`, data, headers as any)
+      .then(() => {
+        console.log("Learned model has been loaded.");
+      })
+      .catch((error) => {
+        console.log("Failed to load learned model.");
+      });
   }
 }
